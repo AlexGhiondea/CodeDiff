@@ -62,6 +62,17 @@ namespace CodeDiffWinForms.Controls
         {
             listView1.Items.Clear();
 
+            if (!Directory.Exists(beforePath) )
+            {
+                MessageBox.Show("The before path is incorrect");
+                return;
+            }
+            if (!Directory.Exists(afterPath))
+            {
+                MessageBox.Show("The after path is incorrect");
+                return;
+            }
+
             // we normalize the paths so that we remove the leading part (which will not be common anyway)
             var beforeFiles = Directory.GetFiles(beforePath, "*.*", SearchOption.AllDirectories).Select(file => file.Replace(beforePath, "")).ToArray();
             var afterFiles = Directory.GetFiles(afterPath, "*.*", SearchOption.AllDirectories).Select(file => file.Replace(afterPath, "")).ToArray();
