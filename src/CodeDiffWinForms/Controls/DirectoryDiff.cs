@@ -93,7 +93,7 @@ namespace CodeDiffWinForms.Controls
 
                             fileEntry.FileName = change.Before.Substring(1);
                             fileEntry.Status = EntryStateEnum.Modified;
-                            //fileEntry.Status = TreeDiff.Compare(File.ReadAllText(beforeFilePath), File.ReadAllText(afterFilePath)).Any() ? EntryStateEnum.Modified : EntryStateEnum.NoChange;
+                            fileEntry.Status = TreeDiff.Compare(File.ReadAllText(beforeFilePath), File.ReadAllText(afterFilePath)).Any() ? EntryStateEnum.Modified : EntryStateEnum.NoChange;
                             break;
                         }
                 }

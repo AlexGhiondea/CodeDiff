@@ -64,7 +64,10 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeAnalysis">
@@ -124,6 +127,12 @@
     <Compile Include="Controls\SingleFileDiff.Designer.cs">
       <DependentUpon>SingleFileDiff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SynchronizedRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SynchronizedRichTextBox.Designer.cs">
+      <DependentUpon>SynchronizedRichTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TextCodeDiff.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,7 +166,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="CodeDiffWinForms_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

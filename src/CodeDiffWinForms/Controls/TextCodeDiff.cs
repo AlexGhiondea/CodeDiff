@@ -52,9 +52,12 @@ namespace CodeDiffWinForms.Controls
             Compare();
         }
 
-
         public TextCodeDiff()
         {
+            rtbBefore = new SynchronizedRichTextBox();
+            rtbAfter = new SynchronizedRichTextBox();
+            (rtbAfter as SynchronizedRichTextBox).AddRTB(rtbBefore as SynchronizedRichTextBox);
+            (rtbBefore as SynchronizedRichTextBox).AddRTB(rtbAfter as SynchronizedRichTextBox);
             InitializeComponent();
         }
 
