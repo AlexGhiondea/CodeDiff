@@ -1,15 +1,15 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis;
 using System.Linq;
 
 namespace CodeDiffTests
 {
-    [TestClass]
+    [TestFixture]
     public class StringBasedTests
     {
-        [TestMethod]
+        [Test]
         public void TokenValueModified1()
         {
             string before = @"class C{}";
@@ -24,7 +24,7 @@ namespace CodeDiffTests
             Assert.AreEqual("D", codeDiff.GetModified().First().After.ToString());
         }
 
-        [TestMethod]
+        [Test]
         public void TokenAdded1()
         {
             string before = @"class C{}";
@@ -37,7 +37,7 @@ namespace CodeDiffTests
             Assert.AreEqual(0, codeDiff.GetModified().Count());
         }
 
-        [TestMethod]
+        [Test]
         public void TokenDeleted1()
         {
             string before = @"public class C{}";
@@ -51,7 +51,7 @@ namespace CodeDiffTests
             Assert.AreEqual(0, codeDiff.GetModified().Count());
         }
 
-        [TestMethod]
+        [Test]
         public void NodeAdded1()
         {
             string before = @"class C{}";
@@ -65,7 +65,7 @@ namespace CodeDiffTests
             Assert.AreEqual(0, codeDiff.GetModified().Count());
         }
 
-        [TestMethod]
+        [Test]
         public void NodeAdded2()
         {
             string before = @"class C{}";
@@ -79,7 +79,7 @@ namespace CodeDiffTests
             Assert.AreEqual(0, codeDiff.GetModified().Count());
         }
 
-        [TestMethod]
+        [Test]
         public void NodeDeletedInternal1()
         {
             string before = @"class C{class D{}}";
@@ -93,7 +93,7 @@ namespace CodeDiffTests
             Assert.AreEqual(0, codeDiff.GetModified().Count());
         }
 
-        [TestMethod]
+        [Test]
         public void NodeDeletedEnd1()
         {
             string after = @"class C{}";
@@ -107,7 +107,7 @@ namespace CodeDiffTests
             Assert.AreEqual(0, codeDiff.GetModified().Count());
         }
 
-        [TestMethod]
+        [Test]
         public void Identical1()
         {
             string after = @"class C{}";
@@ -120,7 +120,7 @@ namespace CodeDiffTests
             Assert.AreEqual(0, codeDiff.GetModified().Count());
         }
 
-        [TestMethod]
+        [Test]
         public void Identical2()
         {
             string after = @"";
@@ -134,7 +134,7 @@ namespace CodeDiffTests
         }
 
 
-        [TestMethod]
+        [Test]
         public void NodesAddedInBetweenOtherNodes1()
         {
             string before = @"class C{ 
