@@ -3,8 +3,9 @@ Code diff tool based on comparing the SyntaxTrees created by the Roslyn compiler
 
 ## Changes since forking
 - Recreated solution and project files due to some issues with signing and tool versions
-- Replaced Microsoft Visual Studio tests with more standard NUnit ones
+- Replaced Microsoft Visual Studio tests with standard NUnit ones
 - Removed a lot of non-required package and assembly imports
+- Upgraded the beta Roslyn API to the latest stable release (v1.3.2 July 1, 2016)
 
 ## Screenshots
 
