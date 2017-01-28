@@ -9,7 +9,9 @@ Code diff tool based on comparing the SyntaxTrees created by the Roslyn compiler
 ## Screenshots
 
 ![GitHub Logo](/doc/cat-1.png)
+
 Example 1: Someone added a new property and reformatted your file
 
 ![GitHub Logo](/doc/cat-2.png)
+
 Example 2: Someone renamed your property and just reformatted again :-(
