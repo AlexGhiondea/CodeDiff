@@ -33,7 +33,7 @@ namespace CodeDiffLib
                 // since the files are sorted, if one is greater than the other, it means the file is not there.
                 if (beforeEnumeratorStillValid && StringComparer.OrdinalIgnoreCase.Compare(beforeEnumerator.Current, afterEnumerator.Current) < 0)
                 {
-                    while (StringComparer.OrdinalIgnoreCase.Compare(beforeEnumerator.Current, afterEnumerator.Current) < 0)
+                    while (beforeEnumeratorStillValid && StringComparer.OrdinalIgnoreCase.Compare(beforeEnumerator.Current, afterEnumerator.Current) < 0)
                     {
                         yield return new Change<string>(beforeEnumerator.Current, null, ChangeType.Removed);
                         beforeEnumeratorStillValid = beforeEnumerator.MoveNext();
