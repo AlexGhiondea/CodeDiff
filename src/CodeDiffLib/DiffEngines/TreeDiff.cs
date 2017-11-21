@@ -100,7 +100,7 @@ namespace CodeDiffLib
 
                     //while the nodes have identical types, we add them to the list of nodes to further consider 
                     while ((idx1 < firstDesc.Length && idx2 < secondDesc.Length)
-                        && firstDesc[idx1].CSharpKind() == secondDesc[idx2].CSharpKind())
+                        && firstDesc[idx1].Kind() == secondDesc[idx2].Kind())
                     {
                         // if the text does not match
                         if (!IsTextSame(firstDesc[idx1], secondDesc[idx2]))
@@ -171,7 +171,7 @@ namespace CodeDiffLib
 
             for (int i = secondPos; i < second.Length; i++)
             {
-                if (first.CSharpKind() == second[i].CSharpKind() &&
+                if (first.Kind() == second[i].Kind() &&
                     IsTextSame(first, second[i]))
                 {
                     maxSecond = i;
@@ -200,7 +200,7 @@ namespace CodeDiffLib
             {
                 for (j = secondPos; j < second.Length; j++)
                 {
-                    if ((first[i]).CSharpKind() == (second[j]).CSharpKind())
+                    if ((first[i]).Kind() == (second[j]).Kind())
                     {
                         //we start the show.
                         startFirst = i;
@@ -211,7 +211,7 @@ namespace CodeDiffLib
 
                         //while the node types match
                         while ((tempF < first.Length && tempS < second.Length) &&
-                            (first[tempF]).CSharpKind() == (second[tempS]).CSharpKind())
+                            (first[tempF]).Kind() == (second[tempS]).Kind())
                         {
                             tempF++; tempS++;
                             currLen++;
